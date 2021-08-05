@@ -28,7 +28,12 @@ namespace SafariParkTests
         }
 
         [Test]
-        public void WhenAPlane()
+        public void WhenAPlaneWithAPositionOf300HasAnAltitudeOf500()
+        {
+
+        }
+        [Test]
+        public void WhenAPlaneWithAPositionOf500HasAnAltitudeOf300()
         {
 
         }

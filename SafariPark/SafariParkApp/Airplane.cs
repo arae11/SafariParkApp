@@ -15,7 +15,7 @@ namespace SafariParkApp
         public int Altitude { get; private set; }
 
         // methods
-        public Airplane(int capacity) : base (capacity)
+        public Airplane(int capacity, int speed) : base(capacity)
         {
             Speed = 100;
             _airline = "JetsRUs";

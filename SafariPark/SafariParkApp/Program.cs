@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SafariParkApp
 {
@@ -6,33 +7,58 @@ namespace SafariParkApp
     {
         static void Main(string[] args)
         {
-            //Hunter h = new Hunter("Marion", "Jones", "Canon") { Age = 32 };
-            //Console.WriteLine(h.Age);
-            //Console.WriteLine(h.Shoot());
-
-            //Hunter h2 = new Hunter("Marion", "Jones", "Nikon") { Age = 32 };
-            //Console.WriteLine($"h Equals h2? {h.Equals(h2)}");
-            //Console.WriteLine($"h HashCode: {h.GetHashCode()}");
-            //Console.WriteLine($"Type: {h.GetType()}");
-            //Console.WriteLine($"h ToString: {h.ToString()}");
-
-            //Console.WriteLine($"h: {h}");
-
-            //Rectangle r = new Rectangle(5, 7);
-            //int a = r.CalculateArea();
-
-            Airplane a = new Airplane(200, 100, "JetsRUs")
+            List<IShootable> shootables = new List<IShootable>()
             {
-                NumPassengers = 150
+                new Hunter("Nish", "Mandal", new Camera("Pentax")),
+                new Hunter("Nish", "Mandal", new WaterPistol("Supersoaker")),
+                new Hunter("Nish", "Mandal", new LaserGun("Acme")),
+                new Hunter("Nish", "Mandal", new WaterPistol("Acme"))
             };
-            a.Ascend(500);
-            Console.WriteLine(a.Move(3));
-            Console.WriteLine(a);
-            a.Descend(200);
-            Console.WriteLine(a.Move());
-            a.Move();
-            Console.WriteLine(a);
+            foreach (Hunter gameObj in shootables)
+            {
+                Console.WriteLine(gameObj.Shoot());
+            }
+
+            #region movable example
+            //list<imovable> movablegameobjects = new list<imovable>()
+            //{
+            //    new person("michael", "jordan"),
+            //    new airplane(400, 200, "airbus") { numpassengers = 57 },
+            //    new vehicle(12, 20) { numpassengers = 4 },
+            //    new hunter("barack", "obama", "nikon")
+            //};
+            //foreach (var gameobj in movablegameobjects)
+            //{
+            //    console.writeline(gameobj.move());
+            //}
+            #endregion
         }
+        //    List<Object> gameObjects = new List<object>()
+        //        {
+        //            new Person("Cathy", "French"),
+        //            new Airplane(400, 200, "Boeing") {NumPassengers = 55},
+        //            new Vehicle(12, 20) {NumPassengers = 6},
+        //            new Hunter("Henry", "Hodgkins", "Pentax")
+
+        //        };
+        //        foreach (var gameObj in gameObjects)
+        //        {
+        //            Console.WriteLine(gameObj);
+        //        }
+
+        //Person yolanda = new Person("Yolanda", "Young");
+        //Hunter henry = new Hunter("Henry", "Hodgkins", "Pentax");
+        //SpartaWrite(yolanda);
+        //SpartaWrite(henry);
+        //public static void SpartaWrite(Object obj)
+        //{
+        //    Console.WriteLine(obj.ToString());
+        //    if (obj is Hunter)
+        //    {
+        //        var hunterObj = (Hunter)obj;
+        //        Console.WriteLine(hunterObj.Shoot());
+        //    }
+        //}
         //    Person martin = new Person("Martin", "Beard", 21);
         //    Person alex = new Person("Alex", "Rae", 24);
         //    Person ben = new Person("Benjamin", "Fung", 21);
@@ -77,9 +103,34 @@ namespace SafariParkApp
         //    pt.y = 1000;
         //    p.Age = 92;
 
+        //Hunter h = new Hunter("Marion", "Jones", "Canon") { Age = 32 };
+        //Console.WriteLine(h.Age);
+        //Console.WriteLine(h.Shoot());
 
-        
+        //Hunter h2 = new Hunter("Marion", "Jones", "Nikon") { Age = 32 };
+        //Console.WriteLine($"h Equals h2? {h.Equals(h2)}");
+        //Console.WriteLine($"h HashCode: {h.GetHashCode()}");
+        //Console.WriteLine($"Type: {h.GetType()}");
+        //Console.WriteLine($"h ToString: {h.ToString()}");
+
+        //Console.WriteLine($"h: {h}");
+
+        //Rectangle r = new Rectangle(5, 7);
+        //int a = r.CalculateArea();
+
+        //Airplane a = new Airplane(200, 100, "JetsRUs")
+        //{
+        //    NumPassengers = 150
+        //};
+        //a.Ascend(500);
+        //Console.WriteLine(a.Move(3));
+        //Console.WriteLine(a);
+        //a.Descend(200);
+        //Console.WriteLine(a.Move());
+        //a.Move();
+        //Console.WriteLine(a);
+
     }
-    
+
 
 }

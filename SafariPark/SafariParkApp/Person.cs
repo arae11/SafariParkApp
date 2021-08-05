@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SafariParkApp
 {
-    public class Person
+    public class Person : IMovable
     {
         //public readonly string _firstName = "";
         //private string _lastName = "";
@@ -51,5 +51,16 @@ namespace SafariParkApp
         {
             return $"{base.ToString()} Name: {GetFullName()} Age: {Age}";
         }
+
+        public virtual string Move()
+        {
+            return $"Walking along.";
+        }
+
+        public virtual string Move(int times)
+        {
+            return $"Walking along {times} times.";
+        }
+        
     }
 }
